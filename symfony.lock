@@ -200,6 +200,9 @@
     "symfony/twig-pack": {
         "version": "v1.0.1"
     },
+    "symfony/ux-chartjs": {
+        "version": "v1.2.0"
+    },
     "symfony/var-dumper": {
         "version": "v5.2.7"
     },
