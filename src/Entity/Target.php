@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Target
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -43,7 +44,7 @@ class Target
     private $baseline;
 
     /**
-     * @ORM\OneToMany(targetEntity="Owner", mappedBy="objectives")
+     * @ORM\Column(type="string", length=50)
      */
     private $owner;
 
@@ -107,32 +108,20 @@ class Target
 
         return $this;
     }
-    
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @return mixed
-     */
     public function getOwner()
     {
         return $this->owner;
     }
 
-    /**
-     * @param mixed $owner
-     */
-    public function setOwner($owner): void
+
+    public function setOwner(?string $owner): self
     {
         $this->owner = $owner;
-    }
 
+        return $this;
+    }
 
 
 

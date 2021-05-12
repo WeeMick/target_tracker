@@ -43,7 +43,9 @@ class CsvImportCommand extends Command
             ->setStatus('LIVE')
             ->setImpactArea('Environmental Management')
             ->setObjective('This is a test objective for csv import')
-            ->setBaseline('Some test text for baseline');
+            ->setBaseline('Some test text for baseline')
+            ->setOwner('Rebecca')
+            ;
 
         $this->em->persist($target);
         
@@ -53,10 +55,12 @@ class CsvImportCommand extends Command
 
         $this->em->persist($owner);
 
-        $target->setOwner($owner);
+//        $target->setOwner($owner);
 
         $this->em->flush();
 
         $io->success('Data loaded successfully');
+
+        return Command::SUCCESS;
     }
 }

@@ -27,9 +27,9 @@ class Owner
      */
     private $Role;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Target", mappedBy="Objective_Ref")
-     */
+//    /**
+//     * @ORM\OneToMany(targetEntity="Target", mappedBy="Objective_Ref")
+//     */
     private $Objectives;
 
     public function getId(): ?int
@@ -60,22 +60,5 @@ class Owner
 
         return $this;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getObjectives()
-    {
-        return $this->Objectives;
-    }
-
-    /**
-     * @param mixed $Objectives
-     */
-    public function setObjectives($Objectives): void
-    {
-        $this->Objectives = $Objectives;
-    }
-
 
 }
