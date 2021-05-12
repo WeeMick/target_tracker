@@ -20,124 +20,120 @@ class Target
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $Objective_Ref;
+    private $objective_ref;
 
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $Status;
+    private $status;
 
     /**
      * @ORM\Column(type="string", length=25, nullable=true)
      */
-    private $Impact_Area;
+    private $impact_area;
 
     /**
      * @ORM\Column(type="string", length=500, nullable=true)
      */
-    private $Objective;
+    private $objective;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $Baseline;
+    private $baseline;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\OneToMany(targetEntity="Owner", mappedBy="objectives")
      */
-    private $Owner;
+    private $owner;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $Owner_Role;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getObjectiveRef(): ?string
     {
-        return $this->Objective_Ref;
+        return $this->objective_ref;
     }
 
-    public function setObjectiveRef(string $Objective_Ref): self
+    public function setObjectiveRef(string $objective_ref): self
     {
-        $this->Objective_Ref = $Objective_Ref;
+        $this->objective_ref = $objective_ref;
 
         return $this;
     }
 
     public function getStatus(): ?string
     {
-        return $this->Status;
+        return $this->status;
     }
 
-    public function setStatus(string $Status): self
+    public function setStatus(string $status): self
     {
-        $this->Status = $Status;
+        $this->status = $status;
 
         return $this;
     }
 
     public function getImpactArea(): ?string
     {
-        return $this->Impact_Area;
+        return $this->impact_area;
     }
 
-    public function setImpactArea(?string $Impact_Area): self
+    public function setImpactArea(?string $impact_area): self
     {
-        $this->Impact_Area = $Impact_Area;
+        $this->impact_area = $impact_area;
 
         return $this;
     }
 
     public function getObjective(): ?string
     {
-        return $this->Objective;
+        return $this->objective;
     }
 
-    public function setObjective(?string $Objective): self
+    public function setObjective(?string $objective): self
     {
-        $this->Objective = $Objective;
+        $this->objective = $objective;
 
         return $this;
     }
 
     public function getBaseline(): ?string
     {
-        return $this->Baseline;
+        return $this->baseline;
     }
 
-    public function setBaseline(?string $Baseline): self
+    public function setBaseline(?string $baseline): self
     {
-        $this->Baseline = $Baseline;
+        $this->baseline = $baseline;
 
         return $this;
     }
+    
 
-    public function getOwner(): ?string
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
-        return $this->Owner;
+        return $this->id;
     }
 
-    public function setOwner(string $Owner): self
+    /**
+     * @return mixed
+     */
+    public function getOwner()
     {
-        $this->Owner = $Owner;
-
-        return $this;
+        return $this->owner;
     }
 
-    public function getOwnerRole(): ?string
+    /**
+     * @param mixed $owner
+     */
+    public function setOwner($owner): void
     {
-        return $this->Owner_Role;
+        $this->owner = $owner;
     }
 
-    public function setOwnerRole(string $Owner_Role): self
-    {
-        $this->Owner_Role = $Owner_Role;
 
-        return $this;
-    }
+
+
 }
