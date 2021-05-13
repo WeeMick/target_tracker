@@ -5,6 +5,8 @@ namespace App\Command;
 use App\Entity\Owner;
 use App\Entity\Target;
 use Doctrine\ORM\EntityManagerInterface;
+use League\Csv\Exception;
+use League\Csv\Reader;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -38,22 +40,50 @@ class CsvImportCommand extends Command
 
         $io->title('Attempting to import the feed.....');
 
-        $target = (new Target())
-            ->setObjectiveRef('OBJ0001')
-            ->setStatus('LIVE')
-            ->setImpactArea('Environmental Management')
-            ->setObjective('This is a test objective for csv import')
-            ->setBaseline('Some test text for baseline')
-            ->setOwner('Rebecca')
-            ;
 
-        $this->em->persist($target);
-        
-        $owner = (new Owner())
-        ->setName('Rebecca Bennett')
-        ->setRole('Environmental Manager');
 
-        $this->em->persist($owner);
+        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/Minimal_Data.csv');
+
+//        $results = $reader->fetch
+
+        $reader->setHeaderOffset(0);
+
+//        $header = $reader>getHeader(); //returns the CSV header record
+        $records = $reader->getRecords(); //returns all the CSV records as an Iterator object
+
+        foreach ($records as $record) {
+            try {
+
+//            echo $csv->toString();
+//                echo implode(",", $record);
+                $target = (new Target())
+                    ->setObjectiveRef($record['objective_ref'])
+                    ->setStatus($record['status'])
+                    ->setImpactArea($record['impact_area'])
+                    ->setObjective($record['objective'])
+                    ->setBaseline($record['baseline'])
+                    ->setOwner($record['owner']);
+
+                $this->em->persist($target);
+            } catch (Exception $e) {
+            } //returns the CSV document as a string
+        }
+
+//        $target = (new Target())
+//            ->setObjectiveRef('OBJ0001')
+//            ->setStatus('LIVE')
+//            ->setImpactArea('Environmental Management')
+//            ->setObjective('This is a test objective for csv import')
+//            ->setBaseline('Some test text for baseline')
+//            ->setOwner('Rebecca');
+//
+//        $this->em->persist($target);
+
+//        $owner = (new Owner())
+//            ->setName('Rebecca Bennett')
+//            ->setRole('Environmental Manager');
+//
+//        $this->em->persist($owner);
 
 //        $target->setOwner($owner);
 
