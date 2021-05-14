@@ -18,25 +18,31 @@
     </style>
 
     <div class="container-fluid">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Select Objective
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for objective in objectives %}
+                    <a class="dropdown-item" href="#">{{ objective }}</a>
+                {% endfor %}
+            </div>
+        </div>
         <div class="row">
             <div class="col-10 mt-4">
                 <h1>Admin Dashboard</h1>
                 {{ render_chart(chart) }}
             </div>
-            b
         </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% for objective in objectives %}
-                <a class="dropdown-item" href="#">{{ objective }}</a>
-            {% endfor %}
-        </div>
+    <div>
+        <h2>Data</h2>
+        {% for data in targetData %}
+            <p>{{ data.baseline }}</p>
+        {% endfor %}
     </div>
+
     <div id="comments">
         <h2>Comments</h2>
         <p>
