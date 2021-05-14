@@ -28,7 +28,6 @@ class DashboardController extends AbstractController
         $objRef = $data->getObjectiveRef();
         array_push($objectives, $objRef);
     }
-    dd($objectives);
 
 
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
@@ -36,7 +35,7 @@ class DashboardController extends AbstractController
             'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             'datasets' => [
                 [
-                    'label' => 'Sales!',
+                    'label' => 'Targets!',
                     'backgroundColor' => 'rgb(255, 99, 132)',
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [522, 1500, 2250, 2197, 2345, 3122, 3099],
