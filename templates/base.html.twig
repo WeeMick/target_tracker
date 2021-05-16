@@ -22,6 +22,7 @@
             crossorigin="anonymous"
     ></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
     <script
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -34,6 +35,11 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
+    <script>
+        $(document).ready(function () {
+            $('table').dataTable();
+        });
+    </script>
 {% endblock %}
 </head>
 <body>
@@ -89,45 +95,45 @@
                 >Travel & Transport</a
                 >
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Chart_JS/sustainable_construction.html"
-                >Sustainable Construction</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Chart_JS/sustainable_procurement.html"
-                >Sustainable Procurement</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Chart_JS/community_engagement.html"
-                >Community Engagement</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Chart_JS/biodiversity.html"
-                >Biodiversity</a
-                >
-            </li>
-            <li class="nav-item dropdown">
-                <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                >
-                    Targets
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="/Chart_JS/sustainable_construction.html"#}
+{#                >Sustainable Construction</a#}
+{#                >#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="/Chart_JS/sustainable_procurement.html"#}
+{#                >Sustainable Procurement</a#}
+{#                >#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="/Chart_JS/community_engagement.html"#}
+{#                >Community Engagement</a#}
+{#                >#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="/Chart_JS/biodiversity.html"#}
+{#                >Biodiversity</a#}
+{#                >#}
+{#            </li>#}
+{#            <li class="nav-item dropdown">#}
+{#                <a#}
+{#                        class="nav-link dropdown-toggle"#}
+{#                        href="#"#}
+{#                        id="navbarDropdown"#}
+{#                        role="button"#}
+{#                        data-toggle="dropdown"#}
+{#                        aria-haspopup="true"#}
+{#                        aria-expanded="false"#}
+{#                >#}
+{#                    Targets#}
+{#                </a>#}
+{#                <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                    <a class="dropdown-item" href="#">Action</a>#}
+{#                    <a class="dropdown-item" href="#">Another action</a>#}
+{#                    <div class="dropdown-divider"></div>#}
+{#                    <a class="dropdown-item" href="#">Something else here</a>#}
+{#                </div>#}
+{#            </li>#}
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input
