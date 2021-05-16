@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recycling{% endblock %}
+
+{% block body %}
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Recycling</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped order-column" id="dataTable">
+                            <thead class="text-center">
+                            <tr>
+                                <th>Site</th>
+                                <th>Jan</th>
+                                <th>Feb</th>
+                                <th>Mar</th>
+                                <th>Apr</th>
+                                <th>May</th>
+                                <th>Jun</th>
+                                <th>Jul</th>
+                                <th>Aug</th>
+                                <th>Sept</th>
+                                <th>Oct</th>
+                                <th>Nov</th>
+                                <th>Dec</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for data in recyclingData %}
+                                <tr>
+                                    <td>{{ data.building }}</a></td>
+                                    <td>{{ data.january }}</td>
+                                    <td>{{ data.february }}</td>
+                                    <td>{{ data.march }}</td>
+                                    <td>{{ data.april }}</td>
+                                    <td>{{ data.may }}</td>
+                                    <td>{{ data.june }}</td>
+                                    <td>{{ data.july }}</td>
+                                    <td>{{ data.august }}</td>
+                                    <td>{{ data.september }}</td>
+                                    <td>{{ data.october }}</td>
+                                    <td>{{ data.november }}</td>
+                                    <td>{{ data.december }}</td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
