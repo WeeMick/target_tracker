@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TableController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .example-wrapper code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
+</style>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Objective Ref</th>
+                    <th>Status</th>
+                    <th>Impact Area</th>
+                    <th>Objective</th>
+                    <th>Baseline</th>
+                    <th>Owner</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for data in targetData %}
+                    <tr>
+                        <td>{{ data.objectiveRef }}</td>
+                        <td>{{ data.status }}</td>
+                        <td>{{ data.impactArea }}</td>
+                        <td>{{ data.objective }}</td>
+                        <td>{{ data.baseline }}</td>
+                        <td>{{ data.owner }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}
