@@ -19,6 +19,14 @@ class Target
     private $id;
 
     /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @ORM\Column(type="string", length=10)
      */
     private $objective_ref;

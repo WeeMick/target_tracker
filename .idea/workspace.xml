@@ -20,8 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcd6ae57-19db-41b1-93ac-529ce2a84e64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/target_tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/target_tracker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TableController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TableController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Target.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Target.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/table/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/table/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +117,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/datatables/datatables" />
     </include_path>
   </component>
   <component name="ProjectId" id="1sMIhIqBKKDsfZE7IZ9E9fpINks" />
@@ -123,6 +135,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\build" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\Data" />
       <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\images" />
@@ -162,9 +177,10 @@
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="658" y="-758" key="#com.intellij.fileTypes.FileTypeChooser/1920.-771.1280.910/0.0.1536.824/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620813860681" />
-    <state x="753" y="-851" key="#com.intellij.ide.util.MemberChooser" timestamp="1620834278465">
+    <state x="753" y="-851" key="#com.intellij.ide.util.MemberChooser" timestamp="1621188933125">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
+    <state x="753" y="-851" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.-771.1920.1040/-1920.-898.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621188933125" />
     <state x="753" y="-851" key="#com.intellij.ide.util.MemberChooser/1920.-771.1280.910/0.0.1536.824/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620834278465" />
     <state x="565" y="-1079" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620732310444">
       <screen x="0" y="-1080" width="1920" height="1040" />
