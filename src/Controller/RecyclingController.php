@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Month;
 use App\Entity\Recycling;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,34 +12,20 @@ use Symfony\UX\Chartjs\Model\Chart;
 
 class RecyclingController extends AbstractController
 {
-    #[Route('/recycling', name: 'recycling')]
-    public function index(ChartBuilderInterface $chartBuilder): Response
+    #[Route('/recycling', name: 'recyclingIndex')]
+    public function index(): Response
     {
         $repository = $this->getDoctrine()->getRepository(Recycling::class);
 
         $recyclingData = $repository->findAll();
 
 
-        $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
-        $chart->setData([
-            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            'datasets' => [
-                [
-                    'label' => 'Targets!',
-                    'backgroundColor' => 'rgb(255, 99, 132)',
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [522, 1500, 2250, 2197, 2345, 3122, 3099],
-                ],
-            ],
-        ]);
-
         return $this->render('recycling/index.html.twig', [
             'recyclingData' => $recyclingData,
-            'chart' => $chart
         ]);
     }
 
-    #[Route('/building/{id}', name: 'recyclingtest')]
+    #[Route('/recycling/{id}', name: 'recycling')]
     public function buildingAction(ChartBuilderInterface $chartBuilder, $id)
     {
 
@@ -63,15 +50,20 @@ class RecyclingController extends AbstractController
         $oct = $recyclingData->getOctober();
         $nov = $recyclingData->getNovember();
         $dec = $recyclingData->getDecember();
-//        dd($jan);
-
 
         $chartName = $this->getDoctrine()->getRepository(Recycling::class)->getClassName();
+
+        $repository = $this->getDoctrine()->getRepository(Month::class);
+        $months = $repository->findAll();
+        $labels = [];
+        foreach($months as $month) {
+            array_push($labels, $month->getMonth());
+        }
 
 
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
         $chart->setData([
-            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            'labels' => $labels,
             'datasets' => [
                 [
                     'label' => $chartName,
@@ -88,7 +80,7 @@ class RecyclingController extends AbstractController
                 ],
             ],
         ]);
-        
+
         return $this->render('recycling/building.html.twig', [
             'recyclingData' => $recyclingData,
             'chart' => $chart

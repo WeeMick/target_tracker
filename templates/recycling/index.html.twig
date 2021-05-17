@@ -8,12 +8,6 @@
 
         <!-- Main Content -->
         <div id="content">
-            <div class="row">
-                <div class="col-10 mt-4">
-                    <h1>Recycling Data</h1>
-                    {{ render_chart(chart) }}
-                </div>
-            </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Recycling</h6>
@@ -42,7 +36,7 @@
 
                             {% for data in recyclingData %}
                                 <tr>
-                                    <td>{{ data.building }}</a></td>
+                                    <td><a href="{{ path('recycling', {id: data.id }) }}">{{ data.building }}</a></td>
                                     <td>{{ data.january }}</td>
                                     <td>{{ data.february }}</td>
                                     <td>{{ data.march }}</td>

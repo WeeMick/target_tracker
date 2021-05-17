@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcd6ae57-19db-41b1-93ac-529ce2a84e64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/recycling/building.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RecyclingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RecyclingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recycling/building.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recycling/building.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/recycling/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recycling/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,11 +207,11 @@
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="461" y="-915" key="SettingsEditor/0.0.1536.824/1920.-771.1280.920/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620995151753" />
-    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1621187419800">
+    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1621219280232">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1280.920/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620998558170" />
-    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1920.1040/-1920.-898.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621187419800" />
+    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1920.1040/-1920.-898.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621219280232" />
     <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/1920.-771.1280.910/0.0.1536.824/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620815197722" />
   </component>
 </project>
