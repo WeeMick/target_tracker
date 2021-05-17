@@ -2,134 +2,179 @@
 
 namespace App\Entity;
 
-use App\Repository\TargetRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TargetRepository::class)
+ * Target
+ *
+ * @ORM\Table(name="target")
+ * @ORM\Entity
  */
 class Target
 {
-
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @return mixed
+     * @var string
+     *
+     * @ORM\Column(name="objective_ref", type="string", length=10, nullable=false)
      */
-    public function getId()
+    private $objectiveRef;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=10, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="impact_area", type="string", length=25, nullable=true)
+     */
+    private $impactArea;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="objective", type="string", length=500, nullable=true)
+     */
+    private $objective;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="baseline", type="string", length=100, nullable=true)
+     */
+    private $baseline;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="owner", type="string", length=50, nullable=false)
+     */
+    private $owner;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @param int $id
      */
-    private $objective_ref;
-
-    /**
-     * @ORM\Column(type="string", length=10)
-     */
-    private $status;
-
-    /**
-     * @ORM\Column(type="string", length=25, nullable=true)
-     */
-    private $impact_area;
-
-    /**
-     * @ORM\Column(type="string", length=500, nullable=true)
-     */
-    private $objective;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
-    private $baseline;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $owner;
-
-
-    public function getObjectiveRef(): ?string
+    public function setId(int $id): void
     {
-        return $this->objective_ref;
+        $this->id = $id;
     }
 
-    public function setObjectiveRef(string $objective_ref): self
+    /**
+     * @return string
+     */
+    public function getObjectiveRef(): string
     {
-        $this->objective_ref = $objective_ref;
-
-        return $this;
+        return $this->objectiveRef;
     }
 
-    public function getStatus(): ?string
+    /**
+     * @param string $objectiveRef
+     */
+    public function setObjectiveRef(string $objectiveRef): void
+    {
+        $this->objectiveRef = $objectiveRef;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    public function setStatus(string $status): self
+    /**
+     * @param string $status
+     */
+    public function setStatus(string $status): void
     {
         $this->status = $status;
-
-        return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImpactArea(): ?string
     {
-        return $this->impact_area;
+        return $this->impactArea;
     }
 
-    public function setImpactArea(?string $impact_area): self
+    /**
+     * @param string|null $impactArea
+     */
+    public function setImpactArea(?string $impactArea): void
     {
-        $this->impact_area = $impact_area;
-
-        return $this;
+        $this->impactArea = $impactArea;
     }
 
+    /**
+     * @return string|null
+     */
     public function getObjective(): ?string
     {
         return $this->objective;
     }
 
-    public function setObjective(?string $objective): self
+    /**
+     * @param string|null $objective
+     */
+    public function setObjective(?string $objective): void
     {
         $this->objective = $objective;
-
-        return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getBaseline(): ?string
     {
         return $this->baseline;
     }
 
-    public function setBaseline(?string $baseline): self
+    /**
+     * @param string|null $baseline
+     */
+    public function setBaseline(?string $baseline): void
     {
         $this->baseline = $baseline;
-
-        return $this;
     }
 
-
-    public function getOwner()
+    /**
+     * @return string
+     */
+    public function getOwner(): string
     {
         return $this->owner;
     }
 
-
-    public function setOwner(?string $owner): self
+    /**
+     * @param string $owner
+     */
+    public function setOwner(string $owner): void
     {
         $this->owner = $owner;
-
-        return $this;
     }
+
 
 
 

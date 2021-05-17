@@ -2,40 +2,47 @@
 
 namespace App\Entity;
 
-use App\Repository\MonthRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=MonthRepository::class)
+ * Month
+ *
+ * @ORM\Table(name="month")
+ * @ORM\Entity
  */
 class Month
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @var string
+     *
+     * @ORM\Column(name="month", type="string", length=10, nullable=false)
      */
     private $month;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getMonth(): ?string
+    /**
+     * @return string
+     */
+    public function getMonth(): string
     {
         return $this->month;
     }
 
-    public function setMonth(string $month): self
+    /**
+     * @param string $month
+     */
+    public function setMonth(string $month): void
     {
         $this->month = $month;
-
-        return $this;
     }
+
+
 }

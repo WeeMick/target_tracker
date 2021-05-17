@@ -2,244 +2,341 @@
 
 namespace App\Entity;
 
-use App\Repository\RecyclingRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=RecyclingRepository::class)
+ * Recycling
+ *
+ * @ORM\Table(name="recycling")
+ * @ORM\Entity
  */
 class Recycling
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @var string
+     *
+     * @ORM\Column(name="building", type="string", length=30, nullable=false)
      */
     private $building;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="january", type="integer", nullable=true)
      */
     private $january;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="february", type="integer", nullable=true)
      */
     private $february;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="march", type="integer", nullable=true)
      */
     private $march;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="april", type="integer", nullable=true)
      */
     private $april;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="may", type="integer", nullable=true)
      */
     private $may;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="june", type="integer", nullable=true)
      */
     private $june;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="july", type="integer", nullable=true)
      */
     private $july;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="august", type="integer", nullable=true)
      */
     private $august;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="september", type="integer", nullable=true)
      */
     private $september;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="october", type="integer", nullable=true)
      */
     private $october;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="november", type="integer", nullable=true)
      */
     private $november;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="december", type="integer", nullable=true)
      */
     private $december;
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getBuilding(): ?string
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBuilding(): string
     {
         return $this->building;
     }
 
-    public function setBuilding(string $building): self
+    /**
+     * @param string $building
+     */
+    public function setBuilding(string $building): void
     {
         $this->building = $building;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getJanuary(): ?int
     {
         return $this->january;
     }
 
-    public function setJanuary(?int $january): self
+    /**
+     * @param int|null $january
+     */
+    public function setJanuary(?int $january): void
     {
         $this->january = $january;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getFebruary(): ?int
     {
         return $this->february;
     }
 
-    public function setFebruary(?int $february): self
+    /**
+     * @param int|null $february
+     */
+    public function setFebruary(?int $february): void
     {
         $this->february = $february;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getMarch(): ?int
     {
         return $this->march;
     }
 
-    public function setMarch(?int $march): self
+    /**
+     * @param int|null $march
+     */
+    public function setMarch(?int $march): void
     {
         $this->march = $march;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getApril(): ?int
     {
         return $this->april;
     }
 
-    public function setApril(?int $april): self
+    /**
+     * @param int|null $april
+     */
+    public function setApril(?int $april): void
     {
         $this->april = $april;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getMay(): ?int
     {
         return $this->may;
     }
 
-    public function setMay(?int $may): self
+    /**
+     * @param int|null $may
+     */
+    public function setMay(?int $may): void
     {
         $this->may = $may;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getJune(): ?int
     {
         return $this->june;
     }
 
-    public function setJune(?int $june): self
+    /**
+     * @param int|null $june
+     */
+    public function setJune(?int $june): void
     {
         $this->june = $june;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getJuly(): ?int
     {
         return $this->july;
     }
 
-    public function setJuly(?int $july): self
+    /**
+     * @param int|null $july
+     */
+    public function setJuly(?int $july): void
     {
         $this->july = $july;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getAugust(): ?int
     {
         return $this->august;
     }
 
-    public function setAugust(?int $august): self
+    /**
+     * @param int|null $august
+     */
+    public function setAugust(?int $august): void
     {
         $this->august = $august;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getSeptember(): ?int
     {
         return $this->september;
     }
 
-    public function setSeptember(?int $september): self
+    /**
+     * @param int|null $september
+     */
+    public function setSeptember(?int $september): void
     {
         $this->september = $september;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getOctober(): ?int
     {
         return $this->october;
     }
 
-    public function setOctober(?int $october): self
+    /**
+     * @param int|null $october
+     */
+    public function setOctober(?int $october): void
     {
         $this->october = $october;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getNovember(): ?int
     {
         return $this->november;
     }
 
-    public function setNovember(?int $november): self
+    /**
+     * @param int|null $november
+     */
+    public function setNovember(?int $november): void
     {
         $this->november = $november;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getDecember(): ?int
     {
         return $this->december;
     }
 
-    public function setDecember(?int $december): self
+    /**
+     * @param int|null $december
+     */
+    public function setDecember(?int $december): void
     {
         $this->december = $december;
-
-        return $this;
     }
+
+
+
+
 }

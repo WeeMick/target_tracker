@@ -47,4 +47,10 @@ class RecyclingRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getYearAverage($id)
+    {
+
+
+    }
 }

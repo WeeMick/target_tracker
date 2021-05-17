@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ recyclingData.building }}{% endblock %}
+{% block title %}Waste{% endblock %}
 
 {% block body %}
     <!-- Content Wrapper -->
@@ -8,15 +8,9 @@
 
         <!-- Main Content -->
         <div id="content">
-            <div class="row">
-                <div class="col-10 mt-4">
-                    <h1>Site: {{  recyclingData.building }}</h1>
-                    {{ render_chart(chart) }}
-                </div>
-            </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">{{ recyclingData.building }}</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Waste</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -39,27 +33,28 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>{{ recyclingData.building }}</a></td>
-                                    <td>{{ recyclingData.january }}</td>
-                                    <td>{{ recyclingData.february }}</td>
-                                    <td>{{ recyclingData.march }}</td>
-                                    <td>{{ recyclingData.april }}</td>
-                                    <td>{{ recyclingData.may }}</td>
-                                    <td>{{ recyclingData.june }}</td>
-                                    <td>{{ recyclingData.july }}</td>
-                                    <td>{{ recyclingData.august }}</td>
-                                    <td>{{ recyclingData.september }}</td>
-                                    <td>{{ recyclingData.october }}</td>
-                                    <td>{{ recyclingData.november }}</td>
-                                    <td>{{ recyclingData.december }}</td>
-                                </tr>
 
+                            {% for data in waste_data %}
+                                <tr>
+                                    <td>{{ data.building }}</td>
+                                    <td>{{ data.january }}</td>
+                                    <td>{{ data.february }}</td>
+                                    <td>{{ data.march }}</td>
+                                    <td>{{ data.april }}</td>
+                                    <td>{{ data.may }}</td>
+                                    <td>{{ data.june }}</td>
+                                    <td>{{ data.july }}</td>
+                                    <td>{{ data.august }}</td>
+                                    <td>{{ data.september }}</td>
+                                    <td>{{ data.october }}</td>
+                                    <td>{{ data.november }}</td>
+                                    <td>{{ data.december }}</td>
+                                </tr>
+                            {% endfor %}
 
                             </tbody>
                         </table>
                     </div>
-                    <button><a href="{{ path('recyclingIndex') }}">Back to all site data</a></button>
                 </div>
             </div>
         </div>

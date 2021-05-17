@@ -5,12 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Owner
+ * Waste
  *
- * @ORM\Table(name="owner")
+ * @ORM\Table(name="waste")
  * @ORM\Entity
  */
-class Owner
+class Waste
 {
     /**
      * @var int
@@ -24,16 +24,9 @@ class Owner
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     * @ORM\Column(name="waste_type", type="string", length=30, nullable=false)
      */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="role", type="string", length=50, nullable=false)
-     */
-    private $role;
+    private $wasteType;
 
 
 }

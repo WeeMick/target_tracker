@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Building;
 use App\Entity\Month;
 use App\Entity\Recycling;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,6 +26,48 @@ class RecyclingController extends AbstractController
         ]);
     }
 
+    #[Route('/recycling/average', name: 'recyclingAverage')]
+    public function averageRecycling(ChartBuilderInterface $chartBuilder)
+    {
+        $repository = $this->getDoctrine()->getRepository(Building::class);
+
+        $buildingData = $repository->findAll();
+
+        $buildingNames = [];
+        $avg = [];
+
+        foreach($buildingData as $building) {
+            array_push($buildingNames, $building->getName());
+
+        }
+
+        $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
+        $chart->setData([
+            'labels' => $buildingNames,
+            'datasets' => [
+                [
+                    'label' => 'Average Recycling',
+                    'backgroundColor' => 'rgb(255, 99, 132)',
+                    'borderColor' => 'rgb(255, 99, 132)',
+                    'data' => [$avg],
+                ],
+            ],
+        ]);
+        $chart->setOptions([
+            'scales' => [
+                'yAxes' => [
+                    ['ticks' => ['min' => 0, 'max' => 100]],
+                ],
+            ],
+        ]);
+
+
+        return $this->render('recycling/average.html.twig', [
+            'chart' => $chart
+        ]);
+
+    }
+
     #[Route('/recycling/{id}', name: 'recycling')]
     public function buildingAction(ChartBuilderInterface $chartBuilder, $id)
     {
@@ -32,8 +75,6 @@ class RecyclingController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Recycling::class);
 
         $recyclingData = $repository->find($id);
-
-//        dd($recyclingData[1]);
 
         // array containing all months. Use this array for getting values for each building
         // or just hardcode the 12 lines
@@ -53,8 +94,8 @@ class RecyclingController extends AbstractController
 
         $chartName = $this->getDoctrine()->getRepository(Recycling::class)->getClassName();
 
-        $repository = $this->getDoctrine()->getRepository(Month::class);
-        $months = $repository->findAll();
+        $labelRepository = $this->getDoctrine()->getRepository(Month::class);
+        $months = $labelRepository->findAll();
         $labels = [];
         foreach($months as $month) {
             array_push($labels, $month->getMonth());
@@ -86,4 +127,6 @@ class RecyclingController extends AbstractController
             'chart' => $chart
         ]);
     }
+
+
 }
