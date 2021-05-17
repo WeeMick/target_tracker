@@ -36,7 +36,7 @@
 
                             {% for data in waste_data %}
                                 <tr>
-                                    <td>{{ data.building }}</td>
+                                    <td><a href="{{ path('paperWaste', {id: data.id }) }}">{{ data.building }}</td>
                                     <td>{{ data.january }}</td>
                                     <td>{{ data.february }}</td>
                                     <td>{{ data.march }}</td>

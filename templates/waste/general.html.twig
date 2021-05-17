@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}General Waste{% endblock %}
+
+{% block body %}
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+            <div class="row">
+                <div class="col-10 mt-4">
+                    <h1>Site: {{  generalData.building }}</h1>
+                    {{ render_chart(chart) }}
+                </div>
+            </div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">{{ generalData.building }}</h6>
+                </div>
+                <div class="card-body">
+                    <button><a href="{{ path('waste') }}">Back to all site data</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -79,15 +79,55 @@ class WasteController extends AbstractController
         ]);
     }
 
-    #[Route('/waste/general', name: 'generalWaste')]
-    public function generalAction(ChartBuilderInterface $chartBuilder): Response
+    #[Route('/waste/general/{id}', name: 'generalWaste')]
+    public function generalAction(ChartBuilderInterface $chartBuilder, $id): Response
     {
         $repository = $this->getDoctrine()->getRepository(GeneralWaste::class);
 
-        $generalData = $repository->findAll();
+        $generalData = $repository->find($id);
 
-        dd($generalData);
+        $jan = $generalData->getJanuary();
+        $feb = $generalData->getFebruary();
+        $mar = $generalData->getMarch();
+        $apr = $generalData->getApril();
+        $may = $generalData->getMay();
+        $june = $generalData->getJune();
+        $july = $generalData->getJuly();
+        $aug = $generalData->getAugust();
+        $sept = $generalData->getSeptember();
+        $oct = $generalData->getOctober();
+        $nov = $generalData->getNovember();
+        $dec = $generalData->getDecember();
+
+        $labelRepository = $this->getDoctrine()->getRepository(Month::class);
+        $months = $labelRepository->findAll();
+        $labels = [];
+        foreach ($months as $month) {
+            array_push($labels, $month->getMonth());
+        }
+
+        $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
+        $chart->setData([
+            'labels' => $labels,
+            'datasets' => [
+                [
+                    'label' => 'Paper and Cardboard Waste',
+                    'backgroundColor' => 'rgb(255, 99, 132)',
+                    'borderColor' => 'rgb(255, 99, 132)',
+                    'data' => [$jan, $feb, $mar, $apr, $may, $june, $july, $aug, $sept, $oct, $nov, $dec],
+                ],
+            ],
+        ]);
+        $chart->setOptions([
+            'scales' => [
+                'yAxes' => [
+                    ['ticks' => ['min' => 0, 'max' => 3.5]],
+                ],
+            ],
+        ]);
         return $this->render('waste/general.html.twig', [
+            'generalData' => $generalData,
+            'chart' => $chart
         ]);
     }
 }
