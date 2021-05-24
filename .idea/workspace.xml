@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,11 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcd6ae57-19db-41b1-93ac-529ce2a84e64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/waste/general.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/WasteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WasteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php-version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/CsvImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CsvImportCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/waste/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/waste/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,18 +126,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/default" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\build" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\templates\default" />
       <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\Data" />
       <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\templates" />
+      <recent name="C:\Users\krazy\OneDrive - University of Salford\Final Year\Modules\Final Year Project\Code\Final\target_tracker\public\build" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -147,6 +153,8 @@
       <workItem from="1620676151122" duration="9432000" />
       <workItem from="1620944976671" duration="3394000" />
       <workItem from="1620992554678" duration="1698000" />
+      <workItem from="1621446207978" duration="943000" />
+      <workItem from="1621472361114" duration="2403000" />
     </task>
     <servers />
   </component>
@@ -207,11 +215,12 @@
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="461" y="-915" key="SettingsEditor/0.0.1536.824/1920.-771.1280.920/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620995151753" />
-    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1621266474385">
+    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1621473446308">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1280.920/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620998558170" />
-    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1920.1040/-1920.-898.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621266474385" />
+    <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1920.1040/-1920.-898.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1621473446308" />
+    <state x="2543" y="-546" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.-771.1920.1040/-1920.-898.1920.1040/0.-1080.1920.1040@1920.-771.1920.1040" timestamp="1621300766616" />
     <state x="623" y="-855" width="672" height="678" key="search.everywhere.popup/1920.-771.1280.910/0.0.1536.824/-1920.-831.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1620815197722" />
   </component>
 </project>
