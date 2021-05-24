@@ -15,19 +15,18 @@ class DashboardController extends AbstractController
     #[Route('/dashboard', name: 'dashboard')]
     public function dashboard(ChartBuilderInterface $chartBuilder)
     {
-    $repository = $this->getDoctrine()->getRepository(Target::class);
+        $repository = $this->getDoctrine()->getRepository(Target::class);
 
-    $targetData = $repository->findAll();
+        $targetData = $repository->findAll();
 //    dd($targetData);
-    $objectives = [];
+        $objectives = [];
 
 
-    // $data relates to each row in db
-    foreach ($targetData as $data)
-    {
-        $objRef = $data->getObjectiveRef();
-        array_push($objectives, $objRef);
-    }
+        // $data relates to each row in db
+        foreach ($targetData as $data) {
+            $objRef = $data->getObjectiveRef();
+            array_push($objectives, $objRef);
+        }
 
 
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
@@ -42,6 +41,23 @@ class DashboardController extends AbstractController
                 ],
             ],
         ]);
+        $chart->setOptions(['scales' => [
+            'yAxes' => [[
+                'ticks' => [
+                    'beginAtZero' => true
+                ],
+                'scaleLabel' => [
+                    'display' => true,
+                    'labelString' => "Y Axis Labels"
+                ]
+            ]],
+            'xAxes' => [[
+                'scaleLabel' => [
+                    'display' => true,
+                    'labelString' => "Month"
+                ]
+            ]]
+        ]]);
 
         return $this->render('dashboard/index.html.twig', [
             'chart' => $chart,

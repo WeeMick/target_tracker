@@ -36,7 +36,7 @@ class RecyclingController extends AbstractController
         $buildingNames = [];
         $avg = [];
 
-        foreach($buildingData as $building) {
+        foreach ($buildingData as $building) {
             array_push($buildingNames, $building->getName());
 
         }
@@ -97,7 +97,7 @@ class RecyclingController extends AbstractController
         $labelRepository = $this->getDoctrine()->getRepository(Month::class);
         $months = $labelRepository->findAll();
         $labels = [];
-        foreach($months as $month) {
+        foreach ($months as $month) {
             array_push($labels, $month->getMonth());
         }
 
@@ -116,9 +116,19 @@ class RecyclingController extends AbstractController
         ]);
         $chart->setOptions([
             'scales' => [
-                'yAxes' => [
+                'yAxes' => [[
                     ['ticks' => ['min' => 0, 'max' => 100]],
-                ],
+                    'scaleLabel' => [
+                        'display' => true,
+                        'labelString' => "Percentage %"
+                    ]
+                ]],
+                'xAxes' => [[
+                    'scaleLabel' => [
+                        'display' => true,
+                        'labelString' => "Month"
+                    ]
+                ]]
             ],
         ]);
 

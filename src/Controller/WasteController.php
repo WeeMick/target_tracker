@@ -68,10 +68,20 @@ class WasteController extends AbstractController
         ]);
         $chart->setOptions([
             'scales' => [
-                'yAxes' => [
+                'yAxes' => [[
                     ['ticks' => ['min' => 0, 'max' => 10]],
-                ],
-            ],
+                    'scaleLabel' => [
+                        'display' => true,
+                        'labelString' => "Tonnes"
+                    ]
+                ]],
+                'xAxes' => [[
+                    'scaleLabel' => [
+                        'display' => true,
+                        'labelString' => "Month"
+                    ]
+                ]]
+                ]
         ]);
         return $this->render('waste/paper.html.twig', [
             'paperData' => $paper,
@@ -122,8 +132,17 @@ class WasteController extends AbstractController
             'scales' => [
                 'yAxes' => [
                     ['ticks' => ['min' => 0, 'max' => 3.5]],
+                    'scaleLabel' => [
+                        'display' => true,
+                        'labelString' => "Tonnes"
+                    ]
                 ],
-            ],
+                'xAxes' => [[
+                    'scaleLabel' => [
+                        'display' => true,
+                        'labelString' => "Month"
+                    ]
+                ]]]
         ]);
         return $this->render('waste/general.html.twig', [
             'generalData' => $generalData,
