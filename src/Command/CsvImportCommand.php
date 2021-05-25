@@ -37,7 +37,7 @@ class CsvImportCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title('Attempting to import the feed.....');
 
-        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/Minimal_Data - updated.csv');
+        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/DemoData.csv');
         $reader->setHeaderOffset(0);
 
 //        $header = $reader>getHeader(); //returns the CSV header record

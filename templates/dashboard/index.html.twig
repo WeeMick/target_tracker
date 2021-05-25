@@ -3,50 +3,46 @@
 {% block title %}Target{% endblock %}
 
 {% block body %}
-    <style>
-        .example-wrapper {
-            margin: 1em auto;
-            max-width: 800px;
-            width: 95%;
-            font: 18px/1.5 sans-serif;
-        }
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-        .example-wrapper code {
-            background: #F5F5F5;
-            padding: 2px 6px;
-        }
-    </style>
+        <!-- Main Content -->
+        <div id="content">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Objectives</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped order-column" id="dataTable">
+                            <thead class="text-center">
+                            <tr>
+                                <th>Objective Ref</th>
+                                <th>Status</th>
+                                <th>Impact Area</th>
+                                <th>Objective</th>
+                                <th>Baseline</th>
+                                <th>Owner</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-    <div class="container-fluid">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                Select Objective
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for objective in objectives %}
-                    <a class="dropdown-item" href="#">{{ objective }}</a>
-                {% endfor %}
+                            {% for data in targetData %}
+                                <tr>
+                                    <td><a href="{{ path('dashboard', {id:data.id}) }}">{{ data.objectiveRef }}</a></td>
+                                    <td>{{ data.status }}</td>
+                                    <td>{{ data.impactArea }}</td>
+                                    <td>{{ data.objective }}</td>
+                                    <td>{{ data.baseline }}</td>
+                                    <td>{{ data.owner }}</td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-10 mt-4">
-                <h1>Admin Dashboard</h1>
-                {{ render_chart(chart) }}
-            </div>
-        </div>
-    </div>
-    <div>
-        <h2>Data</h2>
-        {% for data in targetData %}
-            <p>{{ data.baseline }}</p>
-        {% endfor %}
-    </div>
-
-    <div id="comments">
-        <h2>Comments</h2>
-        <p>
-            Comments placeholder
-        </p>
     </div>
 {% endblock %}

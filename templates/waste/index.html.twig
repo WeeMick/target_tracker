@@ -34,7 +34,7 @@
                             </thead>
                             <tbody>
 
-                            {% for data in waste_data %}
+                            {% for data in paper_waste_data %}
                                 <tr>
                                     <td><a href="{{ path('paperWaste', {id: data.id }) }}">{{ data.building }}</td>
                                     <td>{{ data.january }}</td>

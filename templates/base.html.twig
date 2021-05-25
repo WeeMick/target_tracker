@@ -6,42 +6,44 @@
     {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
     {% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
-    <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../public/build/app.css" type="text/css"/>
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
-    <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"
-    ></script>
+        {{ encore_entry_link_tags('app') }}
+        <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}" type="text/css"/>
+        <script
+                src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+        <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"
+        ></script>
 
-{% endblock %}
+    {% endblock %}
 
-{% block javascripts %}
-    {{ encore_entry_script_tags('app') }}
-    <script>
-        $(document).ready(function () {
-            $('table').dataTable();
-        });
-    </script>
-{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script>
+            $(document).ready(function () {
+                $('table').dataTable();
+            });
+        </script>
+    {% endblock %}
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="title">
+
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('images/UOS_icon.png') }}" class="logo" alt="University of Salford Logo"></a>
+    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('images/UOS_icon.png') }}" class="logo"
+                                                           alt="University of Salford Logo"></a>
     <button
             class="navbar-toggler"
             type="button"
@@ -53,52 +55,46 @@
     >
         <span class="navbar-toggler-icon"></span>
     </button>
+    <h1>University of Salford Estates & Facilities</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/"
-                >Home <span class="sr-only">(current)</span></a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('dashboard') }}"
-                >Dashboard</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('table') }}"
-                >Table</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('recyclingIndex') }}"
-                >Recycling</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('waste') }}"
-                >Waste</a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login.html"
-                >Login</a
-                >
-            </li>
-            {# Targets #}
-            {# </a> #}
-            {# <div class="dropdown-menu" aria-labelledby="navbarDropdown"> #}
-            {# <a class="dropdown-item" href="#">Action</a> #}
-            {# <a class="dropdown-item" href="#">Another action</a> #}
-            {# <div class="dropdown-divider"></div> #}
-            {# <a class="dropdown-item" href="#">Something else here</a> #}
-            {# </div> #}
-            {# </li> #}
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"
+                    >Home <span class="sr-only">(current)</span></a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('dashboard') }}"
+                    >Dashboard</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('table') }}"
+                    >Table</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('recyclingIndex') }}"
+                    >Recycling</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('waste') }}"
+                    >Waste</a
+                    >
+                </li>
+                <li class="nav-item disabled">
+                    <a class="nav-link disabled" href="#"
+                    >Login</a
+                    >
+                </li>
+            </ul>
 
-    </div>
-</nav>
+        </div>
+    </nav>
+</div>
 {% block body %}{% endblock %}
 
 {% block footer %}

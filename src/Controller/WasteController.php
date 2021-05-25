@@ -18,12 +18,16 @@ class WasteController extends AbstractController
     #[Route('/waste', name: 'waste')]
     public function index(): Response
     {
-        $wasteRepository = $this->getDoctrine()->getRepository(PaperCardboard::class);
+        $paperRepository = $this->getDoctrine()->getRepository(PaperCardboard::class);
+        $generalRepository = $this->getDoctrine()->getRepository(GeneralWaste::class);
 
-        $wasteData = $wasteRepository->findAll();
+        $paperWasteData = $paperRepository->findAll();
+        $generalWasteData = $generalRepository->findAll();
 
         return $this->render('waste/index.html.twig', [
-            'waste_data' => $wasteData
+            'paper_waste_data' => $paperWasteData,
+            'general_waste_data' => $generalWasteData,
+
         ]);
     }
 
@@ -54,7 +58,7 @@ class WasteController extends AbstractController
             array_push($labels, $month->getMonth());
         }
 
-        $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+        $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
         $chart->setData([
             'labels' => $labels,
             'datasets' => [

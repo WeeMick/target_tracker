@@ -71,7 +71,7 @@ class Target
         return $this->id;
     }
 
-    
+
 
     /**
      * @return string
