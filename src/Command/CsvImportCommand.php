@@ -60,7 +60,7 @@ class CsvImportCommand extends Command
                 $target ->setYear20182019($record['year_2018_2019']);
                 $target ->setYear20192020($record['year_2019_2020']);
                 $target ->setProgressComments($record['progress_comments']);
-                
+
                 $this->em->persist($target);
             }  catch (\Exception $e) {
             } //returns the CSV document as a string

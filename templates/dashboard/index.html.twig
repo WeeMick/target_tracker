@@ -36,7 +36,7 @@
 
                             {% for data in targetData %}
                                 <tr>
-                                    <td><a href="{{ path('dashboard', {id:data.id}) }}">{{ data.objectiveRef }}</a></td>
+                                    <td><a href="{{ path('chart', {id:data.id}) }}">{{ data.objectiveRef }}</a></td>
                                     <td>{{ data.status }}</td>
                                     <td>{{ data.impactArea }}</td>
                                     <td>{{ data.objective }}</td>
