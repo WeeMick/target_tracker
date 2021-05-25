@@ -11,6 +11,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class CsvImportCommand extends Command
 {
@@ -37,7 +38,7 @@ class CsvImportCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title('Attempting to import the feed.....');
 
-        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/Minimal_Data.csv');
+        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/all_fields.csv');
         $reader->setHeaderOffset(0);
 
 //        $header = $reader>getHeader(); //returns the CSV header record
@@ -52,9 +53,16 @@ class CsvImportCommand extends Command
                 $target ->setObjective($record['objective']);
                 $target ->setBaseline($record['baseline']);
                 $target ->setOwner($record['owner']);
-
+                $target ->setPerformanceIndicator($record['performance_indicator']);
+                $target ->setTarget($record['target']);
+                $target ->setTarget2021($record['target_2021']);
+                $target ->setYear20172018($record['year_2017_2018']);
+                $target ->setYear20182019($record['year_2018_2019']);
+                $target ->setYear20192020($record['year_2019_2020']);
+                $target ->setProgressComments($record['progress_comments']);
+                
                 $this->em->persist($target);
-            } catch (Exception $e) {
+            }  catch (\Exception $e) {
             } //returns the CSV document as a string
         }
 

@@ -83,6 +83,11 @@ class Target
     private $target_date;
 
     /**
+     * @ORM\Column(name="target_2021", type="string", length=500, nullable=true)
+     */
+    private $target_2021;
+
+    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $year_2017_2018;
@@ -98,13 +103,143 @@ class Target
     private $year_2019_2020;
 
     /**
+     * @return string
+     */
+    public function getPerformanceIndicator(): string
+    {
+        return $this->performance_indicator;
+    }
+
+    /**
+     * @param string $performance_indicator
+     */
+    public function setPerformanceIndicator(string $performance_indicator): void
+    {
+        $this->performance_indicator = $performance_indicator;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTarget(): string
+    {
+        return $this->target;
+    }
+
+    /**
+     * @param string $target
+     */
+    public function setTarget(string $target): void
+    {
+        $this->target = $target;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTargetDate()
+    {
+        return $this->target_date;
+    }
+
+    /**
+     * @param mixed $target_date
+     */
+    public function setTargetDate($target_date): void
+    {
+        $this->target_date = $target_date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTarget2021()
+    {
+        return $this->target_2021;
+    }
+
+    /**
+     * @param mixed $target_2021
+     */
+    public function setTarget2021($target_2021): void
+    {
+        $this->target_2021 = $target_2021;
+    }
+
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getYear20172018()
+    {
+        return $this->year_2017_2018;
+    }
+
+    /**
+     * @param mixed $year_2017_2018
+     */
+    public function setYear20172018($year_2017_2018): void
+    {
+        $this->year_2017_2018 = $year_2017_2018;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYear20182019()
+    {
+        return $this->year_2018_2019;
+    }
+
+    /**
+     * @param mixed $year_2018_2019
+     */
+    public function setYear20182019($year_2018_2019): void
+    {
+        $this->year_2018_2019 = $year_2018_2019;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYear20192020()
+    {
+        return $this->year_2019_2020;
+    }
+
+    /**
+     * @param mixed $year_2019_2020
+     */
+    public function setYear20192020($year_2019_2020): void
+    {
+        $this->year_2019_2020 = $year_2019_2020;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProgressComments(): string
+    {
+        return $this->progress_comments;
+    }
+
+    /**
+     * @param string $progress_comments
+     */
+    public function setProgressComments(string $progress_comments): void
+    {
+        $this->progress_comments = $progress_comments;
+    }
+
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="progress_comments", type="string", length=500, nullable=false)
+     * @ORM\Column(name="progress_comments", type="string", length=500, nullable=true)
      */
     private $progress_comments;
-
-
 
 
     /**

@@ -1,0 +1,35 @@
+id,objective_ref,status,impact_area,objective,baseline,owner,performance_indicator,target,target_2021,year_2017_2018,year_2018_2019,year_2019_2020,Q2-2020-2021,Q3-2020-2021,Q4-2020-2021,progress_comments
+1,OBJ8907,LIVE,Travel & Transport,Maintain compliance with environmental legislation and other requirements,nibh in lectus pellentesque,Nia Prys-Williams,Number of major non-conformities related to a breach in compliance obligations,Zero major non-conformities related to a breach in compliance obligations,Zero major non-conformities related to a breach in compliance obligations,88,24,56,12,72,77,Project work delayed by CV-19 impact and increased use of disposables
+2,OBJ4964,LIVE,Energy Water & Carbon,"Reduce pollution risk (emissions & discharges) to land, water and groundwater",placerat ante nulla justo,Nia Prys-Williams,Number of pollution incidents,Zero pollution incidents,Zero pollution incidents,86,47,99,78,6,50,Project work delayed by CV-19 impact and increased use of disposables
+3,OBJ5655,LIVE,Waste Management,Maintain ISO 14001 and ISO 50001 certification for the Environmental and Energy Management System,proin at,Nia Prys-Williams,ISO 14001 and ISO 50001 certification,Maintain certification at renewal in 2022,No major non-conformities at surveillance audit,91,51,68,70,56,94,Internal audit completed July 2020 - no NCs
+4,OBJ2843,CLOSED,Environmental Management,"Reduce University Scope 1 and 2 carbon emissions by 81% in absolute terms by 2030/31.
+Interim Target to reduce emissions by 71% in absolute terms by 2022/23.
+Interim Targets (cumulative):
+Year 1 - 2018/19: 51%
+Year 2 - 2019/20: 62%
+Year 3 - 2020/21: 64%
+Year 4 - 2021/22: 67%
+Year 5 - 2022/23: 71%",,Nia Prys-Williams,"% reduction in scope 1 and 2 carbon emissions
+
+Absolute carbon emissions, kgCO2e","71% reduction by 2023
+81% reduction  by 2030
+",Maintain above 66% reduction,79,29,35,9,65,35,"Not achieved and impacted by CV-19, new target agreed by EPB for 2020/21"
+5,OBJ6489,CLOSED,Environmental Management,To improve energy performance by 25% (per m2) by 2030,cursus urna ut,Rebecca Bennett,kWh/m2/HDD,Improve energy performance by 25% (from 2016/17) to 160kWh/m2/HDD by end of academic year 2029/30,,31,98,47,22,43,62,On Track BUT includes impacts of Covid
+6,OBJ5931,LIVE,Sustainable Procurement,Reduce water consumption,quis orci nullam molestie nibh,Rebecca Bennett,"% reduction in water use (per staff and student FTE)
+m3 per staff and student FTE
+ ","To reduce water consumption across the University Estate by 20% by 2025/26.
+",4% reduction in 2020/21 ,41,100,15,86,56,96,Data unavailable due to supplier issues. New target agreed by EPB for 2020/21
+7,OBJ5486,CLOSED,Community Engagement,"To work together towards a shared vision of eradicating avoidable single-use plastics from catering, labs and stationery across Greater Manchester Universities, Manchester University NHS Foundation Trust and Further Education Colleges by 2022. ",massa volutpat,Nia Prys-Williams,Number of avoidable single use plastics,Zero avoidable single use plastics on campus by end 2022,Audit single use plastics in all areas,61,55,81,69,36,0,Project work delayed by CV-19 impact and increased use of disposables
+8,OBJ1062,LIVE,Travel & Transport,Reduce total waste (excl. construction waste) by 12% by September 2025,nisi at nibh,Nia Prys-Williams,"% reduction in waste from baseline
+(kg waste/staff & student FTE)",12% reduction by 01 September 2025,644 tonnes waste (excluding C&D waste),20,97,7,51,97,41,No changes but on track by maintaining existing facilities. 
+9,OBJ9171,LIVE,Waste Management,Increase overall recycling of University waste (excl. Construction waste) to 65% by September 2025,in sagittis dui vel nisl,Rebecca Bennett,% waste material recycled,01-Sep-25,40% recycling (ex. C&D waste),8,91,74,45,20,20,"Not achieved and impacted by CV-19, new target agreed by EPB for 2020/21"
+10,OBJ9970,LIVE,Travel & Transport,Support the use of electric vehicles by staff and students,,Rebecca Bennett,No. of electric vehicle charge points on campus,To increase the number of Electric Vehicle charge points available on campus by end of academic year 2019/20,Maintain current EV points,22,65,20,73,59,61,Reliant on GMEV network progress which has been delayed
+11,OBJ5449,LIVE,Waste Management,Increase the use of Electric Vehicles on campus by Estates,vel augue vestibulum ante ipsum,Nia Prys-Williams,% electric vehicles in estates fleet,20% of Estates Fleet EV by end 2025,1 new EV,36,72,53,100,17,40,"No funding available, target date reviewed to make more realistic fro 2020/21"
+12,OBJ7535,CLOSED,Biodiversity,Improve facilities for cyclists,lorem id,Nia Prys-Williams,No. of cycle parking spaces on campus,500 cycle parking spaces on campus by end 2023/24,Maintain current cycle space numbers,63,78,1,29,92,66,No changes but on track by maintaining existing facilities. 
+13,OBJ6180,CLOSED,Biodiversity,Ensure sustainability considered within construction projects through implementation of the sustainable construction policy,nulla facilisi cras non velit,Nia Prys-Williams,% construction projects meeting sustainable policy requirements,Ongoing,100% construction projects meet policy requirements,1,68,20,83,52,73,No changes but on track by maintaining existing facilities. 
+14,OBJ9179,CLOSED,Travel & Transport,Develop and embed sustainable purchasing policy in Estates and Facilities,,Nia Prys-Williams,"Flexible Framework Self Assessment
+All Estates tender evaluations to include sustainability assessment","To meet Level 4 in all sections of the Flexible Framework by end December 2020
+All Estates tender evaluations to include sustainability assessment",,97,87,6,39,16,60,"Not achieved and impacted by CV-19, new target agreed by EPB for 2020/21"
+15,OBJ4332,CLOSED,Community Engagement,Increase engagement with staff and students at the University with sustainability,rhoncus dui,Nia Prys-Williams,Number of staff/students engaged with sustainablity campaigns and events,Increase in number of staff/students engaged with sustainablity campaigns and events,1500 staff/student s,80,79,80,92,70,75,Establishing baseline in 2019/20
+16,OBJ4918,LIVE,Sustainable Procurement,Increase influence of Green Impact at the University,magnis dis,Rebecca Bennett,Number of staff/students influenced in Green Impact,Increase in number of staff/students influenced in Green Impact,Maintain green impact scheme,78,59,19,11,83,73,Programme deferred to 2020/21 due to CV-19 so no data available for 2019/20
+17,OBJ2527,CLOSED,Sustainable Procurement,To maintain Green Flag status for the Peel Park and Frederick Road campuses. ,in tempus sit amet,Rebecca Bennett,Award status,Ongoing,Maintain Green Flag award,10,85,69,16,30,24,"Not achieved and impacted by CV-19, new target agreed by EPB for 2020/21"
