@@ -37,7 +37,7 @@ class CsvImportCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title('Attempting to import the feed.....');
 
-        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/Minimal_Data.csv');
+        $reader = Reader::createFromPath('%kernel.root_dir%/../Public/Data/Minimal_Data - updated.csv');
         $reader->setHeaderOffset(0);
 
 //        $header = $reader>getHeader(); //returns the CSV header record
@@ -45,13 +45,13 @@ class CsvImportCommand extends Command
 
         foreach ($records as $record) {
             try {
-                $target = (new Target())
-                    ->setObjectiveRef($record['objective_ref'])
-                    ->setStatus($record['status'])
-                    ->setImpactArea($record['impact_area'])
-                    ->setObjective($record['objective'])
-                    ->setBaseline($record['baseline'])
-                    ->setOwner($record['owner']);
+                $target = (new Target());
+                $target ->setObjectiveRef($record['objective_ref']);
+                $target ->setStatus($record['status']);
+                $target ->setImpactArea($record['impact_area']);
+                $target ->setObjective($record['objective']);
+                $target ->setBaseline($record['baseline']);
+                $target ->setOwner($record['owner']);
 
                 $this->em->persist($target);
             } catch (Exception $e) {
