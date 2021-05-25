@@ -64,6 +64,50 @@ class Target
     private $owner;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="performance_indicator", type="string", length=500, nullable=false)
+     */
+    private $performance_indicator;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="target", type="string", length=500, nullable=false)
+     */
+    private $target;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $target_date;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $year_2017_2018;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $year_2018_2019;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $year_2019_2020;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="progress_comments", type="string", length=500, nullable=false)
+     */
+    private $progress_comments;
+
+
+
+
+    /**
      * @return int
      */
     public function getId(): int
