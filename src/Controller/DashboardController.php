@@ -31,24 +31,31 @@ class DashboardController extends AbstractController
 
         $targetData = $repository->find($id);
 
+        $data2017 = $targetData->getYear20172018();
+        $data2018 = $targetData->getYear20182019();
+        $data2019 = $targetData->getYear20192020();
 
-        // $data relates to each row in db
-//        foreach ($targetData as $data)
-//        {
-//            $objRef = $data->getObjectiveRef();
-//            array_push($objectives, $objRef);
-//        }
-
-
-        $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+        $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
         $chart->setData([
-            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            'labels' => ['', 'February', 'March', 'April', 'May', 'June', 'July'],
             'datasets' => [
                 [
-                    'label' => 'Targets!',
+                    'label' => '2017!',
                     'backgroundColor' => 'rgb(255, 99, 132)',
                     'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [522, 1500, 2250, 2197, 2345, 3122, 3099],
+                    'data' => $data2017,
+                ],
+                [
+                    'label' => '2018!',
+                    'backgroundColor' => 'rgb(40, 40, 181)',
+                    'borderColor' => 'rgb(27, 106, 132)',
+                    'data' => $data2018,
+                ],
+                [
+                    'label' => '2018!',
+                    'backgroundColor' => 'rgb(255, 99, 132)',
+                    'borderColor' => 'rgb(27, 106, 132)',
+                    'data' => [622, 800, 1250, 1597, 345, 2122, 1099],
                 ],
             ],
         ]);

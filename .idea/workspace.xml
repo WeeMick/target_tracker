@@ -23,11 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcd6ae57-19db-41b1-93ac-529ce2a84e64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/chart.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CsvImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CsvImportCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +155,8 @@
       <workItem from="1621472361114" duration="2403000" />
       <workItem from="1621882857098" duration="1984000" />
       <workItem from="1621887851248" duration="4480000" />
-      <workItem from="1621898587184" duration="19108000" />
+      <workItem from="1621898587184" duration="21286000" />
+      <workItem from="1622150454196" duration="1707000" />
     </task>
     <servers />
   </component>

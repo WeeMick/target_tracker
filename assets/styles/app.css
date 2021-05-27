@@ -2,17 +2,5 @@ body {
     background-color: lightgray;
 }
 
-.logo {
-    width: 200px;
-    height: 164px;
-}
 
-.title {
-    padding: 60px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
-    display:inline-block;
-}
 
