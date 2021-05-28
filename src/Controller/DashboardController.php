@@ -32,32 +32,29 @@ class DashboardController extends AbstractController
         $targetData = $repository->find($id);
 
         $data2017 = $targetData->getYear20172018();
+//        dd($data2017);
         $data2018 = $targetData->getYear20182019();
         $data2019 = $targetData->getYear20192020();
 
-        $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
+        $chart = $chartBuilder->createChart(Chart::TYPE_PIE);
         $chart->setData([
-            'labels' => ['', 'February', 'March', 'April', 'May', 'June', 'July'],
-            'datasets' => [
-                [
-                    'label' => '2017!',
-                    'backgroundColor' => 'rgb(255, 99, 132)',
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => $data2017,
-                ],
-                [
-                    'label' => '2018!',
-                    'backgroundColor' => 'rgb(40, 40, 181)',
-                    'borderColor' => 'rgb(27, 106, 132)',
-                    'data' => $data2018,
-                ],
-                [
-                    'label' => '2018!',
-                    'backgroundColor' => 'rgb(255, 99, 132)',
-                    'borderColor' => 'rgb(27, 106, 132)',
-                    'data' => [622, 800, 1250, 1597, 345, 2122, 1099],
-                ],
-            ],
+            'title' => "Objective",
+            'labels' => ['2017', '2018', '2019'],
+            'datasets' => [[
+                'label' => 'My First Dataset',
+                'data' => [$data2017, $data2018, $data2019],
+                'backgroundColor' => [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ]
+            ]]
+        ]);
+        $chart->setOptions([
+            'title' => [
+                'display' => true,
+                'text' => 'Custom chart title'
+            ]
         ]);
 
         return $this->render('dashboard/chart.html.twig', [

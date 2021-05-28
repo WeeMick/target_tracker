@@ -39,10 +39,9 @@
     {% endblock %}
 </head>
 <body>
-<div class="title">
 
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('images/UOS_icon.png') }}" class="logo"
+    <a class="navbar-brand my-nav" href="{{ path('home') }}"><img src="{{ asset ('images/UOS_icon.png') }}" class="logo"
                                                            alt="University of Salford Logo"></a>
     <button
             class="navbar-toggler"
@@ -89,7 +88,6 @@
 
         </div>
     </nav>
-</div>
 {% block body %}{% endblock %}
 
 {% block footer %}

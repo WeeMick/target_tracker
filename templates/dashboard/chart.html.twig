@@ -9,19 +9,67 @@
         <!-- Main Content -->
         <div id="content">
             <div class="row">
-                <div class="col-10 mt-4">
-                    <h1>Target Chart</h1>
+                <div class="card">
+                </div>
+                <div class="col-3 mt-4">
+                    <h1>{{ targetdata.objectiveRef }}</h1>
                     {{ render_chart(chart) }}
                 </div>
             </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">{{ recyclingData.building }}</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped order-column" id="dataTable">
+                            <thead class="text-center">
+                            <tr>
+                                <th>Objective Ref</th>
+                                <th>Status</th>
+                                <th>Impact Area</th>
+                                <th>Objective</th>
+                                <th>Baseline</th>
+                                <th>Owner</th>
+                                <th>Performance Indicator</th>
+                                <th>Target</th>
+                                <th>Target 2021</th>
+                                <th>2017-2018</th>
+                                <th>2018-2019</th>
+                                <th>2019-2020</th>
+                                <th>Progress Comments</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ targetData.objectiveRef }}</a></td>
+                                <td>{{ targetData.status }}</td>
+                                <td>{{ targetData.impactArea }}</td>
+                                <td>{{ targetData.objective }}</td>
+                                <td>{{ targetData.baseline }}</td>
+                                <td>{{ targetData.owner }}</td>
+                                <td>{{ targetData.performanceIndicator }}</td>
+                                <td>{{ targetData.target }}</td>
+                                <td>{{ targetData.target2021 }}</td>
+                                <td>{{ targetData.year20172018 }}</td>
+                                <td>{{ targetData.year20182019 }}</td>
+                                <td>{{ targetData.year20192020 }}</td>
+                                <td>{{ targetData.progressComments }}</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary"></h6>
                 </div>
                 <div class="card-body">
-                    <button><a href="{{ path('dashboard') }}">Back to all site data</a></button>
+                    <button><a href="{{ path('dashboard') }}">Back to all objectives data</a></button>
                 </div>
             </div>
         </div>
     </div>
+
 {% endblock %}
